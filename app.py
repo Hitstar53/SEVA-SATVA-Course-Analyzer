@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Incorporate data
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
+even_sem_2022 = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
 
 # Initialize the app
 app = Dash(__name__)
