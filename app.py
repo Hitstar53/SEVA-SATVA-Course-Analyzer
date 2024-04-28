@@ -2,30 +2,35 @@
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import pandas as pd
 import plotly.express as px
+import dash_bootstrap_components as dbc
 
 # Incorporate data
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
 
 # Initialize the app
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-# App layout
-app.layout = html.Div([
-    html.Div(children='My First App with Data, Graph, and Controls'),
-    html.Hr(),
-    dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='controls-and-radio-item'),
-    dash_table.DataTable(data=df.to_dict('records'), page_size=6),
-    dcc.Graph(figure={}, id='controls-and-graph')
+# App layout with dbc
+app.layout = dbc.Container([
+    dbc.Row([
+        dbc.Col([
+            html.H1('Gapminder Data Visualization with Dash', style={'textAlign': 'center'}),
+            html.Hr(),
+            html.P('Select a year:', style={'textAlign': 'center'}),
+            dcc.Slider(
+                id='year-slider',
+                min=df['year'].min(),
+                max=df['year'].max(),
+                value=df['year'].min(),
+                marks={str(year): str(year) for year in df['year'].unique()},
+                step=None
+            ),
+            html.Hr(),
+            dcc.Graph(id='gapminder-graph')
+        ], width=12)
+    ])
 ])
 
-# Add controls to build the interaction
-@callback(
-    Output(component_id='controls-and-graph', component_property='figure'),
-    Input(component_id='controls-and-radio-item', component_property='value')
-)
-def update_graph(col_chosen):
-    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
-    return fig
 
 # Run the app
 if __name__ == '__main__':
