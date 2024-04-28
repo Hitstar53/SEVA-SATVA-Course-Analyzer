@@ -9,6 +9,7 @@ df = pd.read_csv("./data/final.csv")
 
 # Initialize the app
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 # Create a pie chart function
 def create_pie_chart(df, column):
