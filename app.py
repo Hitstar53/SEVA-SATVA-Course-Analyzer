@@ -154,9 +154,9 @@ app.layout = html.Div(
             id="tabs-example-1",
             value="tab-1",
             children=[
-                dcc.Tab(label="Overall", value="tab-1", style={"color": "#7FDBFF"}),
-                dcc.Tab(label="Course", value="tab-2"),
-                dcc.Tab(label="Class", value="tab-3"),
+                dcc.Tab(label="Overall", value="tab-1", style={"margin": "10px", "padding": "10px"}),
+                dcc.Tab(label="Course", value="tab-2",style={"margin": "10px", "padding": "10px"}),
+                dcc.Tab(label="Class", value="tab-3",style={"margin": "10px", "padding": "10px"}),
             ],
             style={
                 "padding": 20,
@@ -366,6 +366,7 @@ def render_content(tab):
                                 ),
                             ],
                             width=4,
+                            
                         ),
                         dbc.Col(
                             [
@@ -393,7 +394,12 @@ def render_content(tab):
                         dbc.Col(
                             dcc.Graph(id="horizontal-bar-tab-3", figure={}), width=11
                         ),
-                    ]
+                    ],
+                    style={"padding": 5,
+                                   "margin": "5px",
+                                   "border-radius": "10px",   
+                                   "backgroundColor": "#333333",                              
+                                   },
                 ),
                 dbc.Row(
                     [
@@ -401,19 +407,25 @@ def render_content(tab):
                             dcc.Graph(id="pie-category-wise-tab-3", figure={}), width=8
                         ),
                     ],
-                    style={"backgroundColor": "#333333", "padding": "10px"},
+                    style={"backgroundColor": "#333333", "padding": "10px",
+                    "margin": "5px",
+                    "border-radius": "10px",
+                    },
                 ),
                 dbc.Row(
                     [
                         dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
                         # dbc.Col(dcc.Graph(id="sunburst_chart", figure={}), width=6),
                     ],
-                    style={"backgroundColor": "#333333", "padding": "10px"},
+                    style={"backgroundColor": "#333333", "padding": "10px",
+                    "margin": "5px",
+                    "border-radius": "10px",
+                    },
                 ),
                 # dcc.Graph(
                 #     figure=dict(data=[dict(x=[1, 2, 3], y=[15, 110, 160], type="bar")])
                 # ),
-            ]
+            ],
         )
 
 
