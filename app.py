@@ -6,7 +6,6 @@ import dash_bootstrap_components as dbc
 from dash import Dash, html, dash_table, dcc, callback, Output, Input, dash_table
 from db import load_data
 import warnings
-
 warnings.filterwarnings("ignore")
 
 # Load data
@@ -74,7 +73,11 @@ def create_bar_chart(df, x, y):
 
 # App layout with dbc components
 app.layout = html.Div(
-    style={"backgroundColor": "#111111"},
+    style={
+        "backgroundColor": "#111111",
+              "padding": 20,
+              "color": "#7FDBFF",
+           },
     children=[
         html.H1(
             "SEVA/SATVA Course Analytics Dashboard",
@@ -138,7 +141,7 @@ app.layout = html.Div(
                             style={
                                 "width": "100%",
                                 "color": "#111111",
-                                "padding": 20,
+                                "padding": 5,
                                 "font-size": 15,
                             },
                         )
@@ -151,12 +154,22 @@ app.layout = html.Div(
             id="tabs-example-1",
             value="tab-1",
             children=[
-                dcc.Tab(label="Overall", value="tab-1"),
+                dcc.Tab(label="Overall", value="tab-1", style={"color": "#7FDBFF"}),
                 dcc.Tab(label="Course", value="tab-2"),
                 dcc.Tab(label="Class", value="tab-3"),
             ],
+            style={
+                "padding": 20,
+                "display": "flex",
+                "justify-content": "space-evenly",
+                "align-items": "center",
+                   },
         ),
-        html.Div(id="tabs-example-content-1"),
+        html.Div(id="tabs-example-content-1", 
+                 style={
+            "padding": 20,
+        }
+        ),
     ],
 )
 
@@ -169,6 +182,7 @@ app.layout = html.Div(
     Output("tabs-example-content-1", "children"),
     Input("tabs-example-1", "value"),
 )
+
 def render_content(tab):
     if tab == "tab-1":
         return html.Div(
@@ -189,7 +203,7 @@ def render_content(tab):
                                     ],
                                     multi=False,
                                     value=1,
-                                    style={"width": "100%", "color": "#111111"},
+                                    style={"width": "100%", "color": "#111111", "padding": 5},
                                 ),
                             ],
                             width=4,
@@ -208,7 +222,7 @@ def render_content(tab):
                                     ],
                                     multi=False,
                                     value=1,
-                                    style={"width": "100%", "color": "#111111"},
+                                    style={"width": "100%", "color": "#111111", "padding": 5},
                                 ),
                             ],
                             width=4,
@@ -227,7 +241,7 @@ def render_content(tab):
                                     ],
                                     multi=False,
                                     value=1,
-                                    style={"width": "100%", "color": "#111111"},
+                                    style={"width": "100%", "color": "#111111", "padding": 5},
                                 ),
                             ],
                             width=4,
