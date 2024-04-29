@@ -3,15 +3,18 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
+from db import load_data
 
 # Load data
-df = pd.read_csv("./data/final.csv")
+df = load_data()
 
 # Initialize the app
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], )
 server = app.server
 
 # Create a pie chart function
+
+
 def create_pie_chart(df, column):
     fig = px.pie(df, names=column)
     fig.update_layout(
@@ -22,6 +25,8 @@ def create_pie_chart(df, column):
     return fig
 
 # Create a bar chart function
+
+
 def create_bar_chart(df, x, y):
     fig = px.bar(df, x=x, y=y)
     fig.update_layout(
@@ -31,21 +36,34 @@ def create_bar_chart(df, x, y):
     )
     return fig
 
+
 # App layout with dbc components
 app.layout = html.Div(
     style={"backgroundColor": "#111111"},
     children=[
         html.H1(
             "SEVA/SATVA Course Analytics Dashboard",
-            style={"textAlign": "center", "color": "#7FDBFF", "padding": 20, "font-size": 40, "font-weight": "bold"},
+            style={"textAlign": "center", "color": "#7FDBFF",
+                   "padding": 20, "font-size": 40, "font-weight": "bold"},
+        ),
+        html.H4(
+            "Select period to analyse:",
+            style={"textAlign": "center", "color": "#7FDBFF",
+                   "padding": 20, "font-size": 40, "font-weight": "bold"},
         ),
         dcc.Dropdown(
             id="slct_sem",
             options=[
-                {"label": "Semester " + str(i), "value": i} for i in df["sem"].unique()
+                {"label": "All time", "value": 0},
+                {"label": "Odd Semester 2022-23", "value": "ODD_SEM_22_23"},
+                {"label": "Even Semester 2022-23", "value": "EVEN_SEM_22_23"},
+                {"label": "Odd Semester 2023-24", "value": "ODD_SEM_23_24"},
+                {"label": "Even Semester 2023-24", "value": "EVEN_SEM_23_24"},
+                {"label": "Academic year 2022-23", "value": "YEAR_22_23"},
+                {"label": "Academic year 2023-24", "value": "YEAR_23_24"}
             ],
             multi=False,
-            value=3,
+            value=0,
             style={"width": "40%", "color": "#111111", "margin": "auto"},
         ),
         html.Div(id="output_container", children=[]),
@@ -57,6 +75,8 @@ app.layout = html.Div(
 )
 
 # Callback function to update charts based on selected semester
+
+
 @app.callback(
     [Output(component_id='output_container', component_property='children'),
      Output(component_id='pie_chart', component_property='figure'),
@@ -64,7 +84,6 @@ app.layout = html.Div(
      Output(component_id='bar_chart_sem', component_property='figure')],
     [Input(component_id='slct_sem', component_property='value')]
 )
-
 def update_graph(option_slctd):
     # print(option_slctd)
     # print(type(option_slctd))
