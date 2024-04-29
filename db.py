@@ -11,12 +11,16 @@ connection_string = os.environ["DB_CONNECTION_STRING"]
 def load_data():
     conn = pyodbc.connect(connection_string)
     data = pd.read_sql(
-        'SELECT EMAIL, NAME, UID, BRANCH, SEM, COURSE, CATEGORY, PERIOD FROM ENROLMENTS', conn)
+        "SELECT EMAIL, NAME, UID, BRANCH, SEM, COURSE, CATEGORY, PERIOD FROM ENROLMENTS",
+        conn,
+    )
     data.rename(columns=lambda x: x.lower(), inplace=True)
-    data['branch'] = data['branch'].astype('category')
-    data['course'] = data['course'].astype('category')
-    data['period'] = data['period'].astype('category')
-    data['category'] = data['category'].astype('category')
+    data["branch"] = data["branch"].astype("category")
+    data["course"] = data["course"].astype("category")
+    data["category"] = data["category"].astype("category")
+    data["period"] = data["period"].str[:-1]
+    data["period"] = data["period"].astype("category")
+    # print(data["period"].unique())
     return data
 
 
@@ -30,4 +34,3 @@ def load_data():
 #     acad_year_22_23 = pd.concat(odd_sem_22_23, even_sem_22_23)
 #     acad_year_23_24 = pd.concat(odd_sem_23_24, even_sem_23_24)
 #     return df
-
