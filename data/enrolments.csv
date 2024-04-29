@@ -1,4 +1,4 @@
-﻿id,email,name,uid,branch,sem,course,category,period
+id,email,name,uid,branch,sem,course,category,period
 ,shaun.dsouza@spit.ac.in,Shaun D'Souza,2021300031,COMP,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,ganesh.chaudhari@spit.ac.in,Ganesh Chaudhari,2021510007,MCA,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,chetan.dhandge@spit.ac.in,Chetan Dhandge,2021510010,MCA,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
@@ -8,7 +8,7 @@
 ,amit.rathod@spit.ac.in,Amit Manohar Rathod,2021510053,MCA,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,sandesh.shivane@spit.ac.in,Sandesh Shivane,2021510063,MCA,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,prashant.singh2@spit.ac.in,Prashant Singh,2021510064,MCA,1,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
-,rahul.shinde@spit.ac.in,Rahul Pandharinath Shinde,2021600061,AI-ML,3,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
+,rahul.shinde@spit.ac.in,Rahul Pandharinath Shinde,2021600061,CSE-AIML,3,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,bhavesh.chaudhari@spit.ac.in,Bhavesh Prashant Chaudhari,2021300018,COMP,3,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,parth.gandhi2@spit.ac.in,Parth Gandhi,2021300033,COMP,3,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
 ,deepak.ganwani@spit.ac.in,Deepak Ganwani,2021300035,COMP,3,Basics of Fire Safety,Intellectual,ODD_SEM_22_23
@@ -539,7 +539,7 @@
 ,aditya.shirodkar@spit.ac.in,Aditya Sachin Shirodkar,2021300121,COMP,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
 ,haridas.singh@spit.ac.in,Haridas Singh,2021300123,COMP,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
 ,khushi.soni@spit.ac.in,Khushi Pankaj Soni,2021300128,COMP,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
-,dhruv.mehta@spit.ac.in,Dhruv Rajiv Mehta,2021600045,CS-AIML,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
+,dhruv.mehta@spit.ac.in,Dhruv Rajiv Mehta,2021600045,CSE-AIML,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
 ,divya.raichura@spit.ac.in,Divya Raichura,2021600052,CSE-AIML,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
 ,darshit.bhagtani@spit.ac.in,Darshit Bhagtani,2021700006,CSE-DS,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
 ,bodhisatya.ghosh@spit.ac.in,Bodhisatya Ghosh,2021700026,CSE-DS,3,Innovation and Creativity,Intellectual,ODD_SEM_22_23
@@ -561,9 +561,9 @@
 ,aryaman.chokhani@spit.ac.in,Aryaman Krishna Chokhani,2021300020,COMP,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
 ,jay.nadkarni@spit.ac.in,Jay Nadkarni,2021300081,COMP,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
 ,sahil.nannaware@spit.ac.in,Sahil Deorao Nannaware,2021300083,COMP,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
-,Manav Rajesh Bhanshali,Manav Rajesh Bhanushali,2021700008,CS-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
-,om.chandra@spit.ac.in,Om Chhaganlal Chanda,2021700014,CS-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
-,khushi.jain@spit.ac.in,Khushi Bharat Jain,2021700030,CS-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
+,Manav Rajesh Bhanshali,Manav Rajesh Bhanushali,2021700008,CSE-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
+,om.chandra@spit.ac.in,Om Chhaganlal Chanda,2021700014,CSE-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
+,khushi.jain@spit.ac.in,Khushi Bharat Jain,2021700030,CSE-DS,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
 ,shruti.kedari@spit.ac.in,Shruti Sakharam Kedari,2021600033,CSE-AIML,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
 ,tejal.komb@spit.ac.in,Tejal Subhash Komb,2021600037,CSE-AIML,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
 ,vaibhav.kore@spit.ac.in,Vaibhav Gajanan Kore,2021600038,CSE-AIML,3,Integrated Personality Development,Emotional,ODD_SEM_22_23
@@ -686,8 +686,8 @@
 ,onam.sarode@spit.ac.in,Sarode Onam Atul,2021300106,COMP,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
 ,adarsh.tripathi@spit.ac.in,Adarsh Pati Tripathi,2021300133,COMP,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
 ,amey.wani@spit.ac.in,Amey Wani,2021300138,COMP,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
-,mansha.manni@spit.ac.in,Mansha Manni,2021600042,CS-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
-,vidhi.sharma@spit.ac.in,Vidhi Sharma,2021600058,CS-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
+,mansha.manni@spit.ac.in,Mansha Manni,2021600042,CSE-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
+,vidhi.sharma@spit.ac.in,Vidhi Sharma,2021600058,CSE-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
 ,mohit.agarwal@spit.ac.in,Mohit Sunil Agarwal,2021600004,CSE-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
 ,deepali.daga@spit.ac.in,Deepali Kamal Daga,2021600012,CSE-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
 ,sarvesh.deshpande@spit.ac.in,Sarvesh Deshpande,2021600013,CSE-AIML,3,Mentoring School Children (Abhyudaya),Social,ODD_SEM_22_23
@@ -837,7 +837,7 @@
 ,ashutosh.nistane@spit.ac.in,Ashutosh Balasaheb Nistane,2021510038,MCA,1,Physical Fitness,Physical,ODD_SEM_22_23
 ,atharva.patil2@spit.ac.in,Atharva Suhas Patil,2021510048,MCA,1,Physical Fitness,Physical,ODD_SEM_22_23
 ,vyankatesh.wable@spit.ac.in,Vyankatesh Badriprasad Wable,2021510067,MCA,1,Physical Fitness,Physical,ODD_SEM_22_23
-,hrisabh.upadhyay@spit.ac.in,Hrisabh Upadhyay,2021600069,AI-ML,3,Physical Fitness,Physical,ODD_SEM_22_23
+,hrisabh.upadhyay@spit.ac.in,Hrisabh Upadhyay,2021600069,CSE-AIML,3,Physical Fitness,Physical,ODD_SEM_22_23
 ,aditya.choudhary@spit.ac.in,Aditya Ramakant Choudhary,2021300022,COMP,3,Physical Fitness,Physical,ODD_SEM_22_23
 ,dhruvil.doshi@spit.ac.in,Dhruvil Doshi,2021300027,COMP,3,Physical Fitness,Physical,ODD_SEM_22_23
 ,atharva.gite@spit.ac.in,Atharva Ravi Gite,2021300038,COMP,3,Physical Fitness,Physical,ODD_SEM_22_23
@@ -952,9 +952,9 @@
 ,ayush.kedare@spit.ac.in,Ayush Vijay Kedare,2021300058,COMP,3,Read a book,Intellectual,ODD_SEM_22_23
 ,advika.kharat@spit.ac.in,Advika Kharat,2021300060,COMP,3,Read a book,Intellectual,ODD_SEM_22_23
 ,harshith.kunder@spit.ac.in,Harshtih Kunder,2021300068,COMP,3,Read a book,Intellectual,ODD_SEM_22_23
-,sushant.divekar@spit.ac.in,Sushant Sadashiv Divekar,2021600016,CS-AIML,3,Read a book,Intellectual,ODD_SEM_22_23
-,manthanayalwar@spit.ac.in,Manthan Satish Ayalwar,2021700003,CS-DS,3,Read a book,Intellectual,ODD_SEM_22_23
-,asmi.bhanushali@spit.ac.in,Asmi Shailesh Bhanushali,2021700007,CS-DS,3,Read a book,Intellectual,ODD_SEM_22_23
+,sushant.divekar@spit.ac.in,Sushant Sadashiv Divekar,2021600016,CSE-AIML,3,Read a book,Intellectual,ODD_SEM_22_23
+,manthanayalwar@spit.ac.in,Manthan Satish Ayalwar,2021700003,CSE-DS,3,Read a book,Intellectual,ODD_SEM_22_23
+,asmi.bhanushali@spit.ac.in,Asmi Shailesh Bhanushali,2021700007,CSE-DS,3,Read a book,Intellectual,ODD_SEM_22_23
 ,sujal.gupta@spit.ac.in,Gupta Sujal Santosh,2021600025,CSE-AIML,3,Read a book,Intellectual,ODD_SEM_22_23
 ,satyam.jaiswal@spit.ac.in,Satyam Rajesh Jaiswal,2021600028,CSE-AIML,3,Read a book,Intellectual,ODD_SEM_22_23
 ,sandesh.kharchan@spit.ac.in,Sandesh Kharchan,2021600035,CSE-AIML,3,Read a book,Intellectual,ODD_SEM_22_23
@@ -1916,7 +1916,7 @@
 ,aryan.adav22@spit.ac.in,Aryan Adav,2022201001,EXTC,4,NSS,Social,EVEN_SEM_22_23
 ,vipul.chavan22@spit.ac.in,Chavan Vipul Rajendra,2022201005,EXTC,4,NSS,Social,EVEN_SEM_22_23
 ,mohammedmaaz.khan22@spit.ac.in,Mohammed Maaz Khan,2022201010,EXTC,4,NSS,Social,EVEN_SEM_22_23
-,jayant.chavan22@spit.ac.in,Jayant Chavan,2022201006,EXTC-A,4,NSS,Social,EVEN_SEM_22_23
+,jayant.chavan22@spit.ac.in,Jayant Chavan,2022201006,EXTC,4,NSS,Social,EVEN_SEM_22_23
 ,tejas.dhurve@spit.ac.in,Tejas Dhurve,2020200010,EXTC,6,NSS,Social,EVEN_SEM_22_23
 ,srushti.gaikwad@spit.ac.in,Srushti Kailas Gaikwad,2020200013,EXTC,6,NSS,Social,EVEN_SEM_22_23
 ,harshal.lade@spit.ac.in,Harshal Lade,2020200038,EXTC,6,NSS,Social,EVEN_SEM_22_23
@@ -3384,7 +3384,7 @@
 ,adit.padgaonkar@spit.ac.in,Adit Padgaonkar,2020200042,EXTC,7,Staircase Climbing,Physical,ODD_SEM_23_24
 ,anmol.chokshi@spit.ac.in,Anmol Vikram Chokshi,2020400003,IT,7,Staircase Climbing,Physical,ODD_SEM_23_24
 ,vansh.jain2@spit.ac.in,Vansh Jain,2020400014,IT,7,Staircase Climbing,Physical,ODD_SEM_23_24
-,ayush.nemade22@spit.ac.in,Ayush Nemade,2022300067,A,3,Study of Life,Intellectual,ODD_SEM_23_24
+,ayush.nemade22@spit.ac.in,Ayush Nemade,2022300067,COMP,3,Study of Life,Intellectual,ODD_SEM_23_24
 ,shravani.nikam22@spit.ac.in,Shravani Sudhir Nikam,2022700036,CSE-DS,3,Study of Life,Intellectual,ODD_SEM_23_24
 ,shreshth.singh22@spit.ac.in,Singh Shreshth Pradeep,2022700056,CSE-DS,3,Study of Life,Intellectual,ODD_SEM_23_24
 ,vivek.valanj22@spit.ac.in,Valanj Vivek Pramod,2022200123,EXTC,3,Study of Life,Intellectual,ODD_SEM_23_24
