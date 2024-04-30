@@ -76,7 +76,7 @@ def create_bar_chart(df, x, y):
 # App layout with dbc components
 app.layout = html.Div(
     style={
-        "backgroundColor": "#111111",
+        "backgroundColor": "#18181B",
         "padding": 20,
         "color": "#7FDBFF",
     },
@@ -88,7 +88,7 @@ app.layout = html.Div(
                 "color": "#7FDBFF",
                 "padding-top": "2rem",
                 "padding-bottom": "2rem",
-                "font-size": "2.5em",
+                "font-size": "3em",
                 "font-weight": "bold",
             },
         ),
@@ -100,8 +100,8 @@ app.layout = html.Div(
                             "Select period to analyse:",
                             style={
                                 "color": "#7FDBFF",
-                                "font-size": 20,
-                                "padding": 20,
+                                "font-size": 25,
+                                # "padding": 20,
                                 "text-align": "center",
                             },
                         ),
@@ -141,13 +141,16 @@ app.layout = html.Div(
                             multi=False,
                             value="ALL_TIME",
                             style={
-                                "width": "100%",
                                 "color": "#111111",
-                                "padding": 5,
-                                "font-size": 15,
+                                # "padding": 10,
+                                "text-align": "center",
                             },
-                        )
+                        ),
                     ],
+                    # width={"size": 3, "offset": 0},
+                    style={
+                        "height": "80%",
+                    },
                     # width={"size": 4, "offset": 1},
                 ),
             ],
@@ -159,17 +162,31 @@ app.layout = html.Div(
                 dcc.Tab(
                     label="At a glance",
                     value="tab-1",
-                    style={"margin": "10px", "padding": "10px"},
+                    style={
+                        "margin": "10px",
+                        "padding": "10px",
+                        "border-radius": "15px",
+                        # "backgroundColor": "222.2 47.4% 11.2%",
+                        #
+                    },
                 ),
                 dcc.Tab(
                     label="Overall",
                     value="tab-2",
-                    style={"margin": "10px", "padding": "10px"},
+                    style={
+                        "margin": "10px",
+                        "padding": "10px",
+                        "border-radius": "15px",
+                    },
                 ),
                 dcc.Tab(
                     label="Course",
                     value="tab-3",
-                    style={"margin": "10px", "padding": "10px"},
+                    style={
+                        "margin": "10px",
+                        "padding": "10px",
+                        "border-radius": "15px",
+                    },
                 ),
             ],
             style={
@@ -177,6 +194,7 @@ app.layout = html.Div(
                 "display": "flex",
                 "justify-content": "space-evenly",
                 "align-items": "center",
+                "border-radius": "15px",
             },
         ),
         html.Div(
@@ -293,7 +311,7 @@ def render_content(tab):
             #     ),
             # ]
         )
-    
+
         # dbc.Row(
         #     [
         #         dbc.Col(dcc.Graph(id="line_chart", figure={}), width=6),
@@ -389,7 +407,13 @@ def render_content(tab):
                                     options=[{"label": "ALL", "value": 0}],
                                     multi=False,
                                     value=0,
-                                    style={"width": "100%", "color": "#111111"},
+                                    style={
+                                        # "width": "75%",
+                                        "color": "#111111",
+                                        "font-size": "18px",
+                                        "border-radius": "7px",
+                                        # "padding":"10px",
+                                    },
                                 ),
                             ],
                             width=4,
@@ -405,14 +429,26 @@ def render_content(tab):
                                     options=[{"label": "ALL", "value": "ALL"}],
                                     multi=False,
                                     value="ALL",
-                                    style={"width": "100%", "color": "#111111"},
+                                    style={
+                                        # "width": "50%",
+                                        "color": "#111111",
+                                        "font-size": "18px",
+                                        "border-radius": "7px",
+                                    },
                                 ),
                             ],
                             width=4,
                         ),
                     ],
-                    justify="center",
-                    style={"backgroundColor": "#333333", "padding": "10px"},
+                    # justify="center",
+                    style={
+                        "backgroundColor": "transperent",
+                        # "padding": "10px",
+                        "display": "flex",
+                        "justify-content": "space-evenly",
+                        "align-items": "center",
+                        "padding": "15px",
+                    },
                 ),
                 html.Br(),
                 dbc.Row(
@@ -445,7 +481,7 @@ def render_content(tab):
                 ),
                 dbc.Row(
                     [
-                        dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
+                        # dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
                         # dbc.Col(dcc.Graph(id="sunburst_chart", figure={}), width=6),
                     ],
                     style={
