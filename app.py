@@ -6,6 +6,7 @@ import dash_bootstrap_components as dbc
 from dash import Dash, html, dash_table, dcc, callback, Output, Input, dash_table
 from db import load_data
 import warnings
+
 warnings.filterwarnings("ignore")
 
 # Load data
@@ -49,6 +50,7 @@ def get_df(selected_period):
     else:
         return year_23_24_df
 
+
 # Create a pie chart function
 def create_pie_chart(df, column):
     fig = px.pie(df, names=column)
@@ -75,9 +77,9 @@ def create_bar_chart(df, x, y):
 app.layout = html.Div(
     style={
         "backgroundColor": "#111111",
-              "padding": 20,
-              "color": "#7FDBFF",
-           },
+        "padding": 20,
+        "color": "#7FDBFF",
+    },
     children=[
         html.H1(
             "SEVA/SATVA Course Analytics Dashboard",
@@ -154,21 +156,34 @@ app.layout = html.Div(
             id="tabs-example-1",
             value="tab-1",
             children=[
-                dcc.Tab(label="Overall", value="tab-1", style={"margin": "10px", "padding": "10px"}),
-                dcc.Tab(label="Course", value="tab-2",style={"margin": "10px", "padding": "10px"}),
-                dcc.Tab(label="Class", value="tab-3",style={"margin": "10px", "padding": "10px"}),
+                dcc.Tab(
+                    label="At a glance",
+                    value="tab-1",
+                    style={"margin": "10px", "padding": "10px"},
+                ),
+                dcc.Tab(
+                    label="Overall",
+                    value="tab-2",
+                    style={"margin": "10px", "padding": "10px"},
+                ),
+                dcc.Tab(
+                    label="Course",
+                    value="tab-3",
+                    style={"margin": "10px", "padding": "10px"},
+                ),
             ],
             style={
                 "padding": 20,
                 "display": "flex",
                 "justify-content": "space-evenly",
                 "align-items": "center",
-                   },
+            },
         ),
-        html.Div(id="tabs-example-content-1", 
-                 style={
-            "padding": 20,
-        }
+        html.Div(
+            id="tabs-example-content-1",
+            style={
+                "padding": 20,
+            },
         ),
     ],
 )
@@ -182,91 +197,103 @@ app.layout = html.Div(
     Output("tabs-example-content-1", "children"),
     Input("tabs-example-1", "value"),
 )
-
 def render_content(tab):
-    if tab == "tab-1":
+    if tab == "tab-3":
         return html.Div(
-            [
-                dbc.Row(
-                    [
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Semester",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_sem",
-                                    options=[
-                                        {"label": "Semester " + str(i), "value": i}
-                                        for i in range(1, 9)
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111", "padding": 5},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Branch",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_branch",
-                                    options=[
-                                        {"label": str(i), "value": i}
-                                        for i in main_data["branch"].unique()
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111", "padding": 5},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Category",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_cat",
-                                    options=[
-                                        {"label": "Category " + str(i), "value": i}
-                                        for i in main_data["category"].unique()
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111", "padding": 5},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                    ],
-                    justify="center",
-                    # style={"backgroundColor": "#333333", "padding": "10px"},
-                ),
-                html.Br(),
-                dbc.Row(
-                    [
-                        dbc.Col(dcc.Graph(id="pie_chart", figure={}), width=6),
-                        dbc.Col(dcc.Graph(id="bar_chart", figure={}), width=6),
-                    ],
-                    style={"backgroundColor": "#333333", "padding": "10px"},
-                ),
-                dbc.Row(
-                    [
-                        dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
-                        # dbc.Col(dcc.Graph(id="sunburst_chart", figure={}), width=6),
-                    ],
-                    style={"backgroundColor": "#333333", "padding": "10px"},
-                ),
-            ]
+            # [
+            #     dbc.Row(
+            #         [
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Semester",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_sem",
+            #                         options=[
+            #                             {"label": "Semester " + str(i), "value": i}
+            #                             for i in range(1, 9)
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={
+            #                             "width": "100%",
+            #                             "color": "#111111",
+            #                             "padding": 5,
+            #                         },
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Branch",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_branch",
+            #                         options=[
+            #                             {"label": str(i), "value": i}
+            #                             for i in main_data["branch"].unique()
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={
+            #                             "width": "100%",
+            #                             "color": "#111111",
+            #                             "padding": 5,
+            #                         },
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Category",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_cat",
+            #                         options=[
+            #                             {"label": "Category " + str(i), "value": i}
+            #                             for i in main_data["category"].unique()
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={
+            #                             "width": "100%",
+            #                             "color": "#111111",
+            #                             "padding": 5,
+            #                         },
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #         ],
+            #         justify="center",
+            #         # style={"backgroundColor": "#333333", "padding": "10px"},
+            #     ),
+            #     html.Br(),
+            #     dbc.Row(
+            #         [
+            #             dbc.Col(dcc.Graph(id="pie_chart", figure={}), width=6),
+            #             dbc.Col(dcc.Graph(id="bar_chart", figure={}), width=6),
+            #         ],
+            #         style={"backgroundColor": "#333333", "padding": "10px"},
+            #     ),
+            #     dbc.Row(
+            #         [
+            #             dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
+            #             # dbc.Col(dcc.Graph(id="sunburst_chart", figure={}), width=6),
+            #         ],
+            #         style={"backgroundColor": "#333333", "padding": "10px"},
+            #     ),
+            # ]
         )
+    
         # dbc.Row(
         #     [
         #         dbc.Col(dcc.Graph(id="line_chart", figure={}), width=6),
@@ -276,77 +303,77 @@ def render_content(tab):
         # ),
     elif tab == "tab-2":
         return html.Div(
-            [
-                dbc.Row(
-                    [
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Semester",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_sem",
-                                    options=[
-                                        {"label": "Semester " + str(i), "value": i}
-                                        for i in main_data["sem"].unique()
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111"},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Branch",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_branch",
-                                    options=[
-                                        {"label": str(i), "value": i}
-                                        for i in main_data["branch"].unique()
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111"},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                        dbc.Col(
-                            [
-                                html.Label(
-                                    "Select Category",
-                                    style={"color": "#7FDBFF"},
-                                ),
-                                dcc.Dropdown(
-                                    id="slct_cat",
-                                    options=[
-                                        {"label": "Category " + str(i), "value": i}
-                                        for i in main_data["category"].unique()
-                                    ],
-                                    multi=False,
-                                    value=1,
-                                    style={"width": "100%", "color": "#111111"},
-                                ),
-                            ],
-                            width=4,
-                        ),
-                    ],
-                    justify="center",
-                    # style={"backgroundColor": "#333333", "padding": "10px"},
-                ),
-                html.H3("Tab content 2"),
-                dcc.Graph(
-                    figure=dict(data=[dict(x=[1, 2, 3], y=[5, 10, 6], type="bar")])
-                ),
-            ]
+            # [
+            #     dbc.Row(
+            #         [
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Semester",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_sem",
+            #                         options=[
+            #                             {"label": "Semester " + str(i), "value": i}
+            #                             for i in main_data["sem"].unique()
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={"width": "100%", "color": "#111111"},
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Branch",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_branch",
+            #                         options=[
+            #                             {"label": str(i), "value": i}
+            #                             for i in main_data["branch"].unique()
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={"width": "100%", "color": "#111111"},
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #             dbc.Col(
+            #                 [
+            #                     html.Label(
+            #                         "Select Category",
+            #                         style={"color": "#7FDBFF"},
+            #                     ),
+            #                     dcc.Dropdown(
+            #                         id="slct_cat",
+            #                         options=[
+            #                             {"label": "Category " + str(i), "value": i}
+            #                             for i in main_data["category"].unique()
+            #                         ],
+            #                         multi=False,
+            #                         value=1,
+            #                         style={"width": "100%", "color": "#111111"},
+            #                     ),
+            #                 ],
+            #                 width=4,
+            #             ),
+            #         ],
+            #         justify="center",
+            #         # style={"backgroundColor": "#333333", "padding": "10px"},
+            #     ),
+            #     html.H3("Tab content 2"),
+            #     dcc.Graph(
+            #         figure=dict(data=[dict(x=[1, 2, 3], y=[5, 10, 6], type="bar")])
+            #     ),
+            # ]
         )
-    elif tab == "tab-3":
+    elif tab == "tab-1":
         return html.Div(
             [
                 dbc.Row(
@@ -366,7 +393,6 @@ def render_content(tab):
                                 ),
                             ],
                             width=4,
-                            
                         ),
                         dbc.Col(
                             [
@@ -386,20 +412,23 @@ def render_content(tab):
                         ),
                     ],
                     justify="center",
-                    # style={"backgroundColor": "#333333", "padding": "10px"},
+                    style={"backgroundColor": "#333333", "padding": "10px"},
                 ),
                 html.Br(),
                 dbc.Row(
                     [
                         dbc.Col(
-                            dcc.Graph(id="horizontal-bar-tab-3", figure={}), width=11
+                            dcc.Graph(id="horizontal-bar-tab-3", figure={}),
                         ),
                     ],
-                    style={"padding": 5,
-                                   "margin": "5px",
-                                   "border-radius": "10px",   
-                                   "backgroundColor": "#333333",                              
-                                   },
+                    style={
+                        "padding": 5,
+                        "margin": "5px",
+                        "border-radius": "10px",
+                        "backgroundColor": "#333333",
+                    },
+                    align="center",
+                    justify="center",
                 ),
                 dbc.Row(
                     [
@@ -407,9 +436,11 @@ def render_content(tab):
                             dcc.Graph(id="pie-category-wise-tab-3", figure={}), width=8
                         ),
                     ],
-                    style={"backgroundColor": "#333333", "padding": "10px",
-                    "margin": "5px",
-                    "border-radius": "10px",
+                    style={
+                        "backgroundColor": "#333333",
+                        "padding": "10px",
+                        "margin": "5px",
+                        "border-radius": "10px",
                     },
                 ),
                 dbc.Row(
@@ -417,9 +448,11 @@ def render_content(tab):
                         dbc.Col(dcc.Graph(id="bar_chart_sem", figure={}), width=6),
                         # dbc.Col(dcc.Graph(id="sunburst_chart", figure={}), width=6),
                     ],
-                    style={"backgroundColor": "#333333", "padding": "10px",
-                    "margin": "5px",
-                    "border-radius": "10px",
+                    style={
+                        "backgroundColor": "#333333",
+                        "padding": "10px",
+                        "margin": "5px",
+                        "border-radius": "10px",
                     },
                 ),
                 # dcc.Graph(
@@ -482,12 +515,17 @@ def update_graph_tab_3(selected_period, sem, branch):
     # pie_chart_1 = create_pie_chart(df, "course")
     x = df.groupby("course")["uid"].count().sort_values(ascending=True)
     x.name = "Count of students"
-    x = pd.merge(
-        x, course_category, left_index=True, right_on="course_name"
-    ).dropna().sort_values(by="Count of students", ascending=True)
-    x = x[x['Count of students'] > 0]
-    x.rename(columns={'course_name': 'Course'}, inplace=True)
-    hor_bar_1 = px.bar(x, x='Count of students', y='Course', orientation='h', color='category')
+    x = (
+        pd.merge(x, course_category, left_index=True, right_on="course_name")
+        .dropna()
+        .sort_values(by="Count of students", ascending=True)
+    )
+    x = x[x["Count of students"] > 0]
+    x.rename(columns={"course_name": "Course"}, inplace=True)
+    hor_bar_1 = px.bar(
+        x, x="Count of students", y="Course", orientation="h", color="category"
+    )
+    hor_bar_1.update_layout(height=1500)
     # Bar chart
     pie_chart_2 = create_pie_chart(df, "category")
     # # Bar chart for semester wise category popularity
@@ -509,10 +547,11 @@ def update_graph_tab_3(selected_period, sem, branch):
 def update_options(selected_period):
     df = get_df(selected_period)
     sem_options = [{"label": "ALL", "value": 0}]
-    sem_options += [{"label": str(i), "value": i} for i in df['sem'].unique()]
-    branch_options =  [{"label": "ALL", "value": "ALL"}]
-    branch_options += [{"label": str(i), "value": i} for i in df['branch'].unique()]
+    sem_options += [{"label": str(i), "value": i} for i in df["sem"].unique()]
+    branch_options = [{"label": "ALL", "value": "ALL"}]
+    branch_options += [{"label": str(i), "value": i} for i in df["branch"].unique()]
     return sem_options, branch_options
+
 
 # Run the app
 if __name__ == "__main__":
